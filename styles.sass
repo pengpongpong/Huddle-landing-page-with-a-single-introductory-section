@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap')
+
+$openSans: 'Open Sans', sans-serif
+$poppins: 'Poppins', sans-serif
+
+$violet: hsl(257, 40%, 49%)
+$magenta: hsl(300, 69%, 71%)
+
+$desktop: 600px
+
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body
+    display: grid
+    place-content: center
+    background: $violet url("/images/bg-mobile.svg") no-repeat top left
+    background-size: 100%
+    @media screen and ( min-width: $desktop )
+        background: $violet url("/images/bg-desktop.svg") no-repeat top left
+        background-size: 93%
+        min-height: 100vh
+
+main
+    display: flex
+    flex-direction: column
+    margin: 1.5rem
+    color: white
+    background: url("/images/logo.svg") top left no-repeat
+    background-size: 50%
+    @media screen and ( min-width: $desktop )
+        display: grid
+        grid-template-columns: 1fr 1fr
+        background-size: 15%
+        margin: 4em
+
+picture
+    padding: 5.5rem 0 2.5rem 0
+    height: 50%
+    img
+        max-width: 100%
+    @media screen and ( min-width: $desktop )
+        grid-column: 1
+        height: 100%
+        padding: 0
+        display: grid
+        place-items: center
+        img
+            max-height: 100%
+            width: 100%
+
+.introduction
+    text-align: center
+    h1
+        font-family: $poppins
+        font-size: 1.6rem
+        margin: 2rem 0 1.5rem 0
+    p
+        font-family: $openSans
+        font-size: 1.08rem
+    button
+        color: $violet
+        border: 1px solid white
+        border-radius: 60px
+        background-color: white
+        padding: 1rem 6rem
+        margin: 2rem 0 4rem 0
+        font-family: $poppins
+        font-size: 1.1rem
+        cursor: pointer
+        box-shadow: 0px 0px 10px 1px hsl(0deg 0% 0%/ .5)
+        &:hover
+            color: white
+            border-color: $magenta
+            background-color: $magenta
+            transition: .2s ease-in-out
+    .outro
+        display: grid
+        place-content: center
+        width: 100%
+        .socials
+            list-style: none
+            padding: 0
+            width: 100%
+            li
+                float: left
+                cursor: pointer
+                &:not(:last-child)
+                    margin-right: .8rem
+                a
+                    text-decoration: none
+                    border: 1px solid white
+                    border-radius: 50%
+                    width: 1rem
+                    height: 1rem
+                    padding: 1rem
+                    display: grid
+                    place-content: center
+                    color: white
+                    font-size: 1rem
+                &:hover
+                    a
+                        color: $magenta
+                        border-color: $magenta
+                        transition: .2s ease-in-out
+    @media screen and ( min-width: $desktop )
+        display: grid
+        grid-template-columns: auto 11.5em
+        grid-template-rows: 48em auto
+        grid-column: 2
+        place-content: center
+        text-align: left
+        margin: 4em
+        height: 100%
+        .content
+            grid-column: 1/3
+            grid-row: 1
+        .outro
+            grid-column: 2
+            grid-row: 2
+            .socials
+                li
+                    a
+                        font-size: 1.6em
+                        padding: .9em
+        h1
+            font-size: 3.5em
+            width: 95%
+            margin-top: 1em
+        p
+            font-size: 1.65em
+        button
+            font-size: 1.7em
+            padding: .7em
+            width: 10.5em
+
+.attribution
+    font-size: 11px
+    text-align: center
+    color: white
+    a
+        color: $magenta
